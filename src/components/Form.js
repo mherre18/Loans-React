@@ -1,7 +1,7 @@
 import React, {Fragment, useState} from 'react';
 import {calculateTotal} from '../helpers';
 
-const Form = ({amount, saveAmount, term, saveTerm}) => {
+const Form = ({amount, saveAmount, term, saveTerm, total, saveTotal}) => {
 
     const [error, saveError] = useState(false);
 
@@ -18,7 +18,7 @@ const Form = ({amount, saveAmount, term, saveTerm}) => {
 
         const total = calculateTotal(amount, term);
 
-        console.log(total);
+        saveTotal(total);
 
     }
 
