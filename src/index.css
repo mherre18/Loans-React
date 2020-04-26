@@ -7,7 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+  background: linear-gradient(90deg, #88d8b0 0%, #96ceb4 100%);
   height: 100%;
 }
 h1 {
@@ -34,7 +34,7 @@ form, .messages {
   text-align: center;
 }
 .result {
-  border: 2px solid #00b0d7;
+  border: 2px solid #ffeead;
   padding: 3rem 0;
 }
 form label {
@@ -48,14 +48,14 @@ input[type="submit"]:disabled{
 
 .error {
   background-color: white;
-  border:2px solid red;
+  border:2px solid #ff6f69;
   padding: .5rem;
   text-align: center;
-  color: red;
+  color: #ff6f69;
   text-transform: uppercase;
   max-width: 600px;
   margin: 0 auto;
 }
-.result p {
+.resultado p {
   margin: 0;
 }
