@@ -1,8 +1,14 @@
 import React from 'react';
 
-const Form = () => {
+const Form = ({amount, saveAmount}) => {
+
+    const readAmount = (e) => {
+        saveAmount(parseInt(e.target.value))
+    }
+
     return ( 
         <form>
+        {amount}
           <div className="row">
               <div>
                   <label>Loan Amount</label>
@@ -10,6 +16,7 @@ const Form = () => {
                       className="u-full-width" 
                       type="number" 
                       placeholder="Example: 3000" 
+                      onChange = { readAmount }
                   />
               </div>
               <div>
