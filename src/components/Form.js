@@ -1,28 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const Form = ({amount, saveAmount}) => {
+const Form = ({amount, saveAmount, term, saveTerm}) => {
 
-    const readAmount = (e) => {
-        saveAmount(parseInt(e.target.value))
+    const [error, saveError] = useState(false);
+
+    const calculateLoan = e => {
+        e.preventDefault();
+
+        if( amount === 0 || term === '' ) {
+            console.log('Theres a mistake')
+            saveError(true);
+        }
     }
 
     return ( 
-        <form>
-        {amount}
-          <div className="row">
+        <form onSubmit={calculateLoan}>
+              <div className="row">
               <div>
                   <label>Loan Amount</label>
                   <input 
                       className="u-full-width" 
                       type="number" 
                       placeholder="Example: 3000" 
-                      onChange = { readAmount }
+                      onChange = {e => saveAmount(parseInt(e.target.value))}
                   />
               </div>
               <div>
                   <label>Term to Pay</label>
                   <select 
                       className="u-full-width"
+                      onChange={e => saveTerm(parseInt(e.target.value))}
                   >
                       <option value="">Select</option>
                       <option value="3">3 months</option>

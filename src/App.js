@@ -8,6 +8,7 @@ function App() {
 
       //define state
       const [amount, saveAmount] = useState(0);
+      const [term, saveTerm] = useState('');
 
 
   return (
@@ -20,6 +21,8 @@ function App() {
     <div className="container"> <Form
       amount ={amount}
       saveAmount={saveAmount}
+      term={term}
+      saveTerm={saveTerm}
     /> </div>
     </div>
   );
